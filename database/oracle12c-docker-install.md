@@ -54,6 +54,9 @@ docker search oracle
 docker pull oraclelinux
 
 docker run --name oracle_linux oraclelinux
+
+# Optionally mount a host directory into the container
+# docker run --name oracle_linux -v /host/src/path:/container/path oraclelinux
 ```
 
 
@@ -175,6 +178,18 @@ EOF
 Run with: `dbstart $ORACLE_HOME`  
 Stop with: `dbshut $ORACLE_HOME`
 
+Example `start_db.sh`:
+
+```sh
+#!/bin/bash
+. /home/oracle/scripts/setenv.sh
+
+export ORAENV_ASK=NO
+. oraenv
+export ORAENV_ASK=YES
+
+dbstart $ORACLE_HOME
+```
 
 If Oracle doesn't start:
 
