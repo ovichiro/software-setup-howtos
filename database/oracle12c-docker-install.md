@@ -53,14 +53,20 @@ docker search oracle
 
 docker pull oraclelinux
 
-docker run --name oracle_linux oraclelinux
+docker run -td --name oracle_linux oraclelinux
 
 # Optionally mount a host directory into the container
-# docker run --name oracle_linux -v /host/src/path:/container/path oraclelinux
+# docker run -td --name oracle_linux -v /host/src/path:/container/path oraclelinux
 ```
 
 
 ### Main setup
+
+To log into the container's bash shell
+
+```sh
+docker exec -it oracle_linux /bin/bash
+```
 
 **From inside the `oracle_linux` container**
 
