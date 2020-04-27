@@ -101,7 +101,7 @@ inventory_loc=/u01/app/oraInventory
 inst_group=oinstall
 EOF
     chown root:oinstall /etc/oraInst.loc
-    chown 640 /etc/oraInst.loc
+    chmod 640 /etc/oraInst.loc
 fi
 ```
 
